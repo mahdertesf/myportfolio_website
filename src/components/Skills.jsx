@@ -20,11 +20,16 @@ const Skills = () => {
             { name: 'Django', icon: 'devicon-django-plain colored' },
             { name: 'React', icon: 'devicon-react-original colored' },
             { name: 'TailwindCSS', icon: 'devicon-tailwindcss-plain colored' },
+            { name: 'Matplotlib', icon: 'devicon-matplotlib-plain colored' } 
            
         ],
         Tools: [
             { name: 'Jupyter Notebooks', icon: 'devicon-jupyter-plain colored' },
-            { name: 'Matplotlib', icon: 'devicon-matplotlib-plain colored' } 
+            { name: 'Git', icon: 'devicon-git-plain colored' },
+            { name: 'GitHub', icon: 'devicon-github-original colored' },
+            { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
+            { name: 'Postman', icon: 'devicon-postman-plain colored' },
+            {name:"Insomnia", icon: 'devicon-insomnia-plain colored'},
         ]
     };
 
