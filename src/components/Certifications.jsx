@@ -177,58 +177,34 @@ const Certifications = () => {
   ];
 
   return (
-    <SectionWrapper id="certificates">
-      <h2 className="text-3xl font-bold mb-8 text-center animate-fadeIn">Certifications</h2>
-      <p className=" mb-8 text-light animate-fadeIn border-b border-glow pb-4">
-        I have completed more than 20 certifications in AI and Web Development from Coursera, including but not limited to the following:
-        <br />
-        <strong>Machine Learning Specialization (Andrew Ng, deeplearning.ai, Stanford):</strong> Covered supervised and unsupervised learning, neural networks, decision trees, reinforcement learning, and model-building best practices.
-        <br />
-        <strong>Deep Learning Specialization (deeplearning.ai):</strong> Completed five courses focusing on CNNs, RNNs, LSTMs, and Transformers using Python and TensorFlow, with applications in speech recognition, music synthesis, NLP, and machine translation, including hyperparameter tuning.
-        <br />
-        <strong>Natural Language Processing Specialization (deeplearning.ai):</strong> Completed three courses on advanced NLP techniques and applications.
-        <br />
-        <strong>TensorFlow Developer Certificate Course:</strong> Completed two courses covering TensorFlow fundamentals and its applications in AI.
-        <br />
-        <strong>Front-end and back-end software development course certificates from Meta on Coursera.</strong>
-      </p>
-      <div className="mb-8">
-        <h3 className="text-2xl font-bold mb-4 text-center animate-fadeIn">Machine Learning Certifications</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {mlCertificates.map((certificate, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-bg-dark border border-glow p-4 rounded-lg shadow-md animate-glowBorder h-full flex flex-col justify-center items-center">
-                <div className="relative overflow-hidden pb-[50%] rounded-lg group-hover:scale-105 transition-transform duration-300 w-full h-1/2">
-                  <img src={certificate.image} alt={certificate.title} className="object-contain absolute top-0 left-0 w-full h-full" />
-                </div>
-                <h3 className="text-xl font-semibold mt-3 mb-2 text-glow animate-fadeIn">{certificate.title}</h3>
-                <p className="text-sm text-light animate-fadeIn">{certificate.provider}</p>
-                <p className="text-sm text-light animate-fadeIn">{certificate.description}</p>
-                <a href={certificate.link} className='mt-3 inline-block text-primary hover:text-glow border-b border-primary transition-colors duration-300 animate-fadeIn'>See Certificate</a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div>
-        <h3 className="text-2xl font-bold mb-4 text-center animate-fadeIn">Web Development Certifications</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {webDevCertificates.map((certificate, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-bg-dark border border-glow p-4 rounded-lg shadow-md animate-glowBorder h-full flex flex-col justify-center items-center">
-                <div className="relative overflow-hidden pb-[50%] rounded-lg group-hover:scale-105 transition-transform duration-300 w-full h-1/2">
-                  <img src={certificate.image} alt={certificate.title} className="object-contain absolute top-0 left-0 w-full h-full" />
-                </div>
-                <h3 className="text-xl font-semibold mt-3 mb-2 text-glow animate-fadeIn">{certificate.title}</h3>
-                <p className="text-sm text-light animate-fadeIn">{certificate.provider}</p>
-                <p className="text-sm text-light animate-fadeIn">{certificate.description}</p>
-                <a href={certificate.link} className='mt-3 inline-block text-primary hover:text-glow border-b border-primary transition-colors duration-300 animate-fadeIn'>See Certificate</a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </SectionWrapper>
+    <SectionWrapper id="certificates" className="">
+  <h2 className="text-3xl font-bold mb-8 text-center animate-fadeIn">Certifications</h2>
+  <div className="mb-8 text-gray-300 animate-fadeIn border-b border-cyan-500/30 pb-6 flex flex-col gap-3 rounded-md bg-gray-800/20 backdrop-blur-sm shadow-md p-4">
+    <p className="text-lg font-medium">
+      I've validated my skills with 34+ certifications across AI and Web Dev from Coursera, including highlights like:
+    </p>
+    <ul className="list-disc list-inside space-y-2 pl-5">
+      <li>
+        <strong className="text-cyan-300">Machine Learning Specialization</strong> (Andrew Ng, deeplearning.ai, Stanford): Mastered core ML algorithms and practices.
+      </li>
+      <li>
+        <strong className="text-cyan-300">Deep Learning Specialization</strong> (deeplearning.ai): Deep dive into CNNs, RNNs, Transformers using TensorFlow.
+      </li>
+      <li>
+        <strong className="text-cyan-300">Natural Language Processing Specialization</strong> (deeplearning.ai): Advanced NLP techniques for real-world applications.
+      </li>
+      <li>
+        <strong className="text-cyan-300">TensorFlow Developer Certificates</strong>: Expertise in building and deploying TensorFlow models.
+      </li>
+      <li>
+        <strong className="text-cyan-300">Meta Front-End and Back-End Developer Certificates</strong>: Full-stack development skills with modern technologies.
+      </li>
+    </ul>
+    <p className="text-sm text-gray-400 italic mt-2">
+      ...and many more! (See certification details and verifiable certificates on my <a href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/" className="text-cyan-300 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>).
+    </p>
+  </div>
+</SectionWrapper>
   );
 };
 
