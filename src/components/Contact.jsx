@@ -5,73 +5,93 @@ import SectionWrapper from "./SectionWrapper";
 const Contact = () => {
   return (
     <>
-      <SectionWrapper
-        id="contact"
-        className="flex flex-col items-center justify-center"
-      >
-       <div className="flex flex-col justify-center items-center">
-       <h2 className="text-3xl font-bold mb-8 text-center animate-fadeIn">
-          Contact Me
-        </h2>
-        <div className="bg-bg-dark p-6 border border-glow rounded-lg shadow-md animate-glowBorder flex justify-between gap-4 w-1/2">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <FaEnvelope className="w-6 h-6 text-primary" />
-              <div>
+      <SectionWrapper id="contact">
+        <div className="flex flex-col items-center justify-center animate-fadeIn">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
+            Contact Me
+          </h2>
+
+          {/* Main Contact Card */}
+          <div className="
+            bg-gradient-to-br from-gray-900 to-slate-900 
+            rounded-lg border border-slate-700 shadow-xl 
+            w-full max-w-4xl p-8 md:p-12 text-slate-300
+          ">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold text-glow mb-4">Let's Connect</h3>
+              <p className="text-lg text-slate-400 mb-8">
+                I'm currently seeking new opportunities. Feel free to reach out via email, phone, or find me on the web.
+              </p>
+            </div>
+            
+            {/* Contact Details Grid */}
+            <div className="grid md:grid-cols-2 gap-8 mb-10">
+              {/* Email */}
+              <div className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                <FaEnvelope className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold">Email</h4>
+                  <a
+                    href="mailto:mahdertesfaye11@gmail.com"
+                    className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 break-all"
+                  >
+                    mahdertesfaye11@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                <FaPhoneAlt className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                <div>
+                  <h4 className="text-white font-semibold">Phone</h4>
+                  <a
+                    href="tel:+251921957652"
+                    className="text-slate-300 hover:text-cyan-400 transition-colors duration-300"
+                  >
+                    +251921957652
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="text-center">
+              <h4 className="text-xl font-semibold text-white mb-6">Find me on the web</h4>
+              <div className="flex justify-center gap-8">
                 <a
-                  href="mailto:mahdertesfaye11@gmail.com"
-                  className="block text-light hover:text-glow transition-colors duration-300 animate-fadeIn"
+                  href="https://github.com/mahdertesf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="text-slate-400 hover:text-cyan-400 hover:scale-110 transition-all duration-300"
                 >
-                  mahdertesfaye11@gmail.com
+                  <FaGithub size={40} />
                 </a>
                 <a
-                  href="mailto:mahder.tesfaye@aait.edu.et"
-                  className="block text-light hover:text-glow transition-colors duration-300 animate-fadeIn"
+                  href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="text-slate-400 hover:text-cyan-400 hover:scale-110 transition-all duration-300"
                 >
-                  mahder.tesfaye@aait.edu.et
+                  <FaLinkedin size={40} />
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <FaPhoneAlt className="w-6 h-6 text-primary" />
-              <a
-                href="tel:+251921957652"
-                className="block text-light hover:text-glow transition-colors duration-300 animate-fadeIn"
-              >
-                +251921957652
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <FaGithub className="w-6 h-6 text-primary" />
-              <a
-                href="https://github.com/mahdertesf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light hover:text-glow transition-colors duration-300 animate-fadeIn"
-              >
-                github
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <FaLinkedin className="w-6 h-6 text-primary" />
-              <a
-                href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light hover:text-glow transition-colors duration-300 animate-fadeIn"
-              >
-                linkedin
-              </a>
-            </div>
           </div>
         </div>
-       </div>
       </SectionWrapper>
-      <footer className="bg-bg-dark p-4 text-center text-light mt-8">
+
+      {/* Enhanced Footer */}
+      <footer className="w-full bg-slate-900 border-t border-slate-800 py-6 mt-16 text-center text-slate-400">
+        <div className="flex justify-center gap-6 mb-4">
+            <a href="https://github.com/mahdertesf" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-white transition-colors"><FaGithub size={24}/></a>
+            <a href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedin size={24}/></a>
+            <a href="mailto:mahdertesfaye11@gmail.com" aria-label="Email" className="hover:text-white transition-colors"><FaEnvelope size={24}/></a>
+        </div>
         <p>
-          &copy; {new Date().getFullYear()} Mahder Tesfaye. All rights reserved.
+          © {new Date().getFullYear()} Mahder Tesfaye Abebe. All rights reserved.
         </p>
       </footer>
     </>

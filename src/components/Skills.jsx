@@ -1,6 +1,8 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
-import { SiPytorch } from "react-icons/si";
+// Import the necessary icons from the react-icons library
+import { SiPytorch, SiHuggingface } from "react-icons/si";
+import { FaServer } from "react-icons/fa";
 
 const Skills = () => {
     const skills = {
@@ -21,37 +23,50 @@ const Skills = () => {
             { name: 'React', icon: 'devicon-react-original colored' },
             { name: 'TailwindCSS', icon: 'devicon-tailwindcss-plain colored' },
             { name: 'Matplotlib', icon: 'devicon-matplotlib-plain colored' } 
-           
         ],
         Tools: [
-            { name: 'Jupyter Notebooks', icon: 'devicon-jupyter-plain colored' },
+            { name: 'Jupyter', icon: 'devicon-jupyter-plain colored' },
             { name: 'Git', icon: 'devicon-git-plain colored' },
             { name: 'GitHub', icon: 'devicon-github-original colored' },
-            { name: 'VS Code', icon: 'devicon-vscode-plain colored' },
-            { name: 'Postman', icon: 'devicon-postman-plain colored' },
-            {name:"Insomnia", icon: 'devicon-insomnia-plain colored'},
+        ],
+        "Cloud & MLOps": [
+            { name: 'Hugging Face', icon: 'SiHuggingface' }, // Special case
+            { name: 'DigitalOcean', icon: 'devicon-digitalocean-plain colored' },
+            { name: 'RunPod.io', icon: 'FaServer' } // Special case
         ]
     };
 
     return (
         <SectionWrapper id="skills">
-            <h2 className="text-3xl font-bold mb-8 text-center animate-fadeIn text-white">Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center animate-fadeIn text-white">Skills & Technologies</h2>
+            
+            {/* Updated grid to handle 4 columns on large screens */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                
                 {Object.keys(skills).map((category) => (
-                    <div key={category} className="border border-gray-700 p-6 rounded-lg shadow-lg animate-glowBorder relative hover:bg-gray-800 transition-all duration-300">
-                        <h3 className="text-xl font-semibold mb-4 animate-fadeIn text-white">{category}</h3>
-                        <ul className="list-none pl-4">
+                    <div key={category} className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 shadow-lg hover:border-cyan-400 hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                        <h3 className="text-xl font-semibold mb-6 text-glow">{category}</h3>
+                        
+                        {/* Grid for skills within a category */}
+                        <div className="grid grid-cols-2 gap-y-8 gap-x-4">
                             {skills[category].map((skill, index) => (
-                                <li key={index} className="mb-6 text-gray-300 animate-fadeIn flex flex-col items-center">
-                                    <span className="mb-2">{skill.name}</span>
-                                    {skill.name === 'PyTorch' ? (
-                                        <SiPytorch size={48} color="#EE4C2C" />
-                                    ) : (
-                                        <i className={`${skill.icon} text-6xl`}></i>
-                                    )}
-                                </li>
+                                <div key={index} className="flex flex-col items-center gap-2 text-slate-300">
+                                    {/* Icon rendering logic */}
+                                    <div className="text-5xl h-14 flex items-center justify-center">
+                                        {skill.name === 'PyTorch' ? (
+                                            <SiPytorch color="#EE4C2C" />
+                                        ) : skill.name === 'Hugging Face' ? (
+                                            <SiHuggingface color="#FFD21E" />
+                                        ) : skill.name === 'RunPod.io' ? (
+                                            <FaServer color="#9A42F6" />
+                                        ) : (
+                                            <i className={skill.icon}></i>
+                                        )}
+                                    </div>
+                                    <span className="text-sm font-medium">{skill.name}</span>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 ))}
             </div>
