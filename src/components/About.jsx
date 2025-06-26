@@ -17,7 +17,7 @@ const About = () => {
             <div className='p-6 md:p-10 rounded-xl shadow-2xl border border-glow animate-glowBorder bg-gradient-to-br from-gray-900 to-slate-900 flex flex-col gap-12 text-slate-300 animate-fadeIn'>
 
                 {/* --- Quick Summary Section --- */}
-                <ul className="space-y-5 text-lg">
+                <ul className="space-y-5 text-lg flex flex-col md:flex-row md:space-x-8 md:space-y-0 md:justify-center">
                     {/* ... (Your 5 summary points with icons remain here) ... */}
                     <li className="flex items-start gap-4"><FaLightbulb className="text-cyan-400 mt-1.5 flex-shrink-0 text-xl" /><p>Designing and deploying real-world, AI-driven web solutions</p></li>
                     <li className="flex items-start gap-4"><FaGlobe className="text-cyan-400 mt-1.5 flex-shrink-0 text-xl" /><p>Crafting seamless and responsive fullstack applications</p></li>
