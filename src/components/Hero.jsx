@@ -6,8 +6,8 @@ import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
   return (
     <SectionWrapper id="home">
-      {/* Full-screen container */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen text-center px-4">
+      {/* Full-screen container with responsive padding */}
+      <div className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8">
         
         {/* Background Radial Gradient */}
         <div className="absolute inset-0 z-0 bg-radial-gradient"></div>
@@ -15,7 +15,7 @@ const Hero = () => {
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center">
           
-          {/* Profile Picture */}
+          {/* Profile Picture (already responsive) */}
           <div className="mb-6 animate-fadeIn" style={{ animationDelay: '100ms', opacity: 0 }}>
             <div className="rounded-full border-4 border-glow/50 p-1 relative w-48 h-48 md:w-56 md:h-56 shadow-2xl shadow-glow/20">
               <img
@@ -26,36 +26,34 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Name with Gradient Text */}
+          {/* Name with refined responsive text sizes */}
           <h1 
-            className="text-4xl font-bold sm:text-5xl p-3 md:text-6xl lg:text-7xl animate-fadeIn bg-gradient-to-r from-glow to-primary bg-clip-text text-transparent"
+            className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl animate-fadeIn bg-gradient-to-r from-glow to-primary bg-clip-text text-transparent"
             style={{ animationDelay: '300ms', opacity: 0 }}
           >
             Mahder Tesfaye Abebe
           </h1>
           
-          {/* Title */}
+          {/* Title with responsive margin and max-width for readability */}
           <p 
-            className="mt-3 text-lg md:text-xl text-light max-w-2xl animate-fadeIn"
+            className="mt-4 md:mt-5 text-lg md:text-xl text-light max-w-prose animate-fadeIn"
             style={{ animationDelay: '500ms', opacity: 0 }}
           >
             Machine Learning Engineer | Full-Stack Web Developer
           </p>
 
-          {/* --- ENHANCED INSPIRATIONAL QUOTE --- */}
-          {/* Container is taller to accommodate larger text and prevent layout shift */}
-          <div className="mt-8 h-20 flex items-center justify-center">
+          {/* Inspirational Quote with a robust, responsive container */}
+          {/* Using min-h instead of h prevents layout breaking on text wrap */}
+          <div className="mt-6 md:mt-8 min-h-[80px] flex items-center justify-center">
             <TypeAnimation
               sequence={[
-                // Wait 1.2 seconds after the title appears, then start typing
                 1200, 
                 '"Every challenge is an invitation to grow!"',
               ]}
               wrapper="p"
               cursor={true}
               speed={50}
-              // New classes for a colorful, large, and bold appearance
-              className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-red-500 to-primary bg-clip-text text-transparent"
+              className="text-xl md:text-2xl font-semibold max-w-prose bg-gradient-to-r from-red-500 to-primary bg-clip-text text-transparent"
             />
           </div>
 
