@@ -15,7 +15,7 @@ const Hero = () => {
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center">
           
-          {/* Profile Picture (already responsive) */}
+          {/* Profile Picture */}
           <div className="mb-6 animate-fadeIn" style={{ animationDelay: '100ms', opacity: 0 }}>
             <div className="rounded-full border-4 border-glow/50 p-1 relative w-48 h-48 md:w-56 md:h-56 shadow-2xl shadow-glow/20">
               <img
@@ -43,7 +43,6 @@ const Hero = () => {
           </p>
 
           {/* Inspirational Quote with a robust, responsive container */}
-          {/* Using min-h instead of h prevents layout breaking on text wrap */}
           <div className="mt-6 md:mt-8 min-h-[80px] flex items-center justify-center">
             <TypeAnimation
               sequence={[
@@ -59,9 +58,10 @@ const Hero = () => {
 
         </div>
 
-        {/* Scroll Down Indicator */}
+
         <div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-light/70 animate-fadeIn"
+      
+          className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-2 text-light/70 animate-fadeIn"
           style={{ animationDelay: '900ms', opacity: 0 }}
         >
           <FaMouse className="text-2xl" />
