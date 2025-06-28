@@ -25,6 +25,12 @@ const Projects = () => {
       description: 'A full-stack web app for my university to streamline academic management, featuring role-based access and AI-powered study tools via the Gemini API.',
       github_link: 'https://github.com/mahdertesf/fullstackproject6',
       youtube_link: 'https://youtu.be/Xv6TKKgXb9k'
+    },
+    {
+      title: 'Full-Stack Cryptography Toolkit',
+      description: 'An interactive web app demonstrating modern encryption. Features a React frontend and a Django REST API to handle algorithms like AES, RSA, and 3DES.',
+      github_link: "https://github.com/mahdertesf/Cryptography-Playground",
+      image: '/assets/images/special_project/crypto.png', // This will be displayed
     }
   ];
 
@@ -50,43 +56,12 @@ const Projects = () => {
   ];
 
   const course_projects = [
-    { 
-      title: 'Image Segmentation (U-Net)', 
-      description: 'Implemented the U-Net architecture from scratch using TensorFlow for semantic image segmentation on the CARLA autonomous driving dataset, enabling detailed scene understanding.', 
-      image: '/assets/images/unet.png', 
-      // --- LINK UPDATED HERE ---
-      link: 'https://github.com/mahdertesf/image-Segmentation-with-UNet' 
-    },
-    { 
-      title: 'Face Recognition System (FaceNet)', 
-      description: 'Built a recognition system using a pre-trained FaceNet model and triplet loss for high-accuracy face verification.', 
-      image: '/assets/images/face.png', 
-      link: 'https://github.com/mahdertesf/Face-Recognition-System' 
-    },
-    { 
-      title: 'Sign Language Recognition', 
-      description: 'Developed a TensorFlow multi-class classifier for sign language, achieving over 95% validation accuracy.', 
-      image: '/assets/images/sign.png', 
-      link: 'https://github.com/mahdertesf/Sign-Language-Recognition' 
-    },
-    { 
-      title: 'Transfer Learning (InceptionV3)', 
-      description: 'Fine-tuned a pre-trained InceptionV3 model for human vs. horse classification, achieving 98.6% validation accuracy.', 
-      image: '/assets/images/transfer.png', 
-      link: 'https://github.com/mahdertesf/Transfer-Learning-InceptionV3-' 
-    },
-    { 
-      title: 'Jazz Music Generation', 
-      description: 'Built an LSTM-based system for generating novel jazz melodies, demonstrating creativity in AI.', 
-      image: '/assets/images/jazz.png', 
-      link: 'https://github.com/mahdertesf/Jazz-Music-Generation' 
-    },
-    { 
-      title: 'Neural Machine Translation', 
-      description: 'Created an attention-based model for converting human-readable dates to machine-readable formats.', 
-      image: '/assets/images/translate.png', 
-      link: 'https://github.com/mahdertesf/Neural-Machine-Translation' 
-    },
+    { title: 'Image Segmentation (U-Net)', description: 'Implemented the U-Net architecture from scratch using TensorFlow for semantic image segmentation on the CARLA autonomous driving dataset.', image: '/assets/images/unet.png', link: 'https://github.com/mahdertesf/image-Segmentation-with-UNet' },
+    { title: 'Face Recognition System (FaceNet)', description: 'Built a recognition system using a pre-trained FaceNet model and triplet loss for high-accuracy face verification.', image: '/assets/images/face.png', link: 'https://github.com/mahdertesf/Face-Recognition-System' },
+    { title: 'Sign Language Recognition', description: 'Developed a TensorFlow multi-class classifier for sign language, achieving over 95% validation accuracy.', image: '/assets/images/sign.png', link: 'https://github.com/mahdertesf/Sign-Language-Recognition' },
+    { title: 'Transfer Learning (InceptionV3)', description: 'Fine-tuned a pre-trained InceptionV3 model for human vs. horse classification, achieving 98.6% validation accuracy.', image: '/assets/images/transfer.png', link: 'https://github.com/mahdertesf/Transfer-Learning-InceptionV3-' },
+    { title: 'Jazz Music Generation', description: 'Built an LSTM-based system for generating novel jazz melodies, demonstrating creativity in AI.', image: '/assets/images/jazz.png', link: 'https://github.com/mahdertesf/Jazz-Music-Generation' },
+    { title: 'Neural Machine Translation', description: 'Created an attention-based model for converting human-readable dates to machine-readable formats.', image: '/assets/images/translate.png', link: 'https://github.com/mahdertesf/Neural-Machine-Translation' },
   ];
 
   // --- RENDER ---
@@ -97,16 +72,24 @@ const Projects = () => {
       {/* --- Section 1: Featured Projects --- */}
       <div className='mb-20'>
         <h3 className="text-2xl sm:text-3xl font-semibold text-glow mb-8 text-center">Featured Projects</h3>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Special_Projects.map((project, index) => (
             <div key={index} className="bg-slate-800/50 rounded-lg border border-slate-700 shadow-xl overflow-hidden flex flex-col group">
               <div className="w-full aspect-video bg-black overflow-hidden">
-                <ReactPlayer
-                  url={project.youtube_link}
-                  width="100%" height="100%"
-                  playing={true} muted={true} loop={true} controls={false}
-                  className="group-hover:scale-105 transition-transform duration-300"
-                />
+                {project.youtube_link ? (
+                  <ReactPlayer
+                    url={project.youtube_link}
+                    width="100%" height="100%"
+                    playing={true} muted={true} loop={true} controls={false}
+                    className="group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                )}
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
@@ -115,9 +98,11 @@ const Projects = () => {
                   <a href={project.github_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm font-medium transition-colors">
                     <FaGithub /> GitHub
                   </a>
-                  <a href={project.youtube_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-red-700/80 hover:bg-red-600/80 rounded-md text-sm font-medium transition-colors">
-                    <FaYoutube /> YouTube
-                  </a>
+                  {project.youtube_link && (
+                    <a href={project.youtube_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-red-700/80 hover:bg-red-600/80 rounded-md text-sm font-medium transition-colors">
+                      <FaYoutube /> YouTube
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
