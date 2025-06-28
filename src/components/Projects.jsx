@@ -12,21 +12,18 @@ const Projects = () => {
       title: 'Fine-Tune Gemma2 models',
       description: 'A web app with a simple UI to fine-tune Gemma2 models for different NLP tasks.',
       github_link: "https://github.com/mahdertesf/Mahder-AI",
-      image: '/assets/images/special_project/gemma.png',
       youtube_link: "https://youtu.be/PIFOzK_SzVI"
     },
     {
       title: "Telegram Channel Hate Content Analyzer",
       description: "A web app to analyze hate content in Telegram channels using custom Transformer Encoders.",
       github_link: "https://github.com/mahdertesf/Mahder-AI",
-      image: "/assets/images/special_project/hate.png",
       youtube_link: "https://youtu.be/VUNmOHDsebY"
     },
     {
       title: 'College Management System | Full-Stack App',
       description: 'A full-stack web app for my university to streamline academic management, featuring role-based access and AI-powered study tools via the Gemini API.',
       github_link: 'https://github.com/mahdertesf/fullstackproject6',
-      image: '/assets/images/special_project/college.png',
       youtube_link: 'https://youtu.be/Xv6TKKgXb9k'
     }
   ];
@@ -46,19 +43,50 @@ const Projects = () => {
     },
     {
       title: 'Hotel Management System Dashboard',
-      description: "As a project manager and frontend lead, I architected the user authentication system (login/registration) and developed the main dashboard and subgroup management modules. My role also involved managing the team's Git workflow, which included reviewing and merging all frontend pull requests to ensure code quality and consistency.",
+      description: "As a project manager and frontend lead, I architected the user authentication system and developed the main dashboard. My role also involved managing the team's Git workflow, including reviewing and merging all frontend pull requests.",
       image: '/assets/images/hotel-dashboard.png',
       link: 'https://github.com/Hotel-Translyvania/Hotel-Management-System' 
     }
   ];
 
   const course_projects = [
-    { title: 'Object Detection System (YOLO)', description: 'Developed an object detection system for autonomous driving using YOLO, TensorFlow, and Keras.', image: '/assets/images/yolo.png', link: 'https://github.com/mahdertesf/Autonomous-Driving---Car-Detection-using-YOLO' },
-    { title: 'Face Recognition System (FaceNet)', description: 'Built a recognition system using a pre-trained FaceNet model and triplet loss for high-accuracy face verification.', image: '/assets/images/face.png', link: 'https://github.com/mahdertesf/Face-Recognition-System' },
-    { title: 'Sign Language Recognition', description: 'Developed a TensorFlow multi-class classifier for sign language, achieving over 95% validation accuracy.', image: '/assets/images/sign.png', link: 'https://github.com/mahdertesf/Sign-Language-Recognition' },
-    { title: 'Transfer Learning (InceptionV3)', description: 'Fine-tuned a pre-trained InceptionV3 model for human vs. horse classification, achieving 98.6% validation accuracy.', image: '/assets/images/transfer.png', link: 'https://github.com/mahdertesf/Transfer-Learning-InceptionV3-' },
-    { title: 'Jazz Music Generation', description: 'Built an LSTM-based system for generating novel jazz melodies, demonstrating creativity in AI.', image: '/assets/images/jazz.png', link: 'https://github.com/mahdertesf/Jazz-Music-Generation' },
-    { title: 'Neural Machine Translation', description: 'Created an attention-based model for converting human-readable dates to machine-readable formats.', image: '/assets/images/translate.png', link: 'https://github.com/mahdertesf/Neural-Machine-Translation' },
+    { 
+      title: 'Image Segmentation (U-Net)', 
+      description: 'Implemented the U-Net architecture from scratch using TensorFlow for semantic image segmentation on the CARLA autonomous driving dataset, enabling detailed scene understanding.', 
+      image: '/assets/images/unet.png', 
+      // --- LINK UPDATED HERE ---
+      link: 'https://github.com/mahdertesf/image-Segmentation-with-UNet' 
+    },
+    { 
+      title: 'Face Recognition System (FaceNet)', 
+      description: 'Built a recognition system using a pre-trained FaceNet model and triplet loss for high-accuracy face verification.', 
+      image: '/assets/images/face.png', 
+      link: 'https://github.com/mahdertesf/Face-Recognition-System' 
+    },
+    { 
+      title: 'Sign Language Recognition', 
+      description: 'Developed a TensorFlow multi-class classifier for sign language, achieving over 95% validation accuracy.', 
+      image: '/assets/images/sign.png', 
+      link: 'https://github.com/mahdertesf/Sign-Language-Recognition' 
+    },
+    { 
+      title: 'Transfer Learning (InceptionV3)', 
+      description: 'Fine-tuned a pre-trained InceptionV3 model for human vs. horse classification, achieving 98.6% validation accuracy.', 
+      image: '/assets/images/transfer.png', 
+      link: 'https://github.com/mahdertesf/Transfer-Learning-InceptionV3-' 
+    },
+    { 
+      title: 'Jazz Music Generation', 
+      description: 'Built an LSTM-based system for generating novel jazz melodies, demonstrating creativity in AI.', 
+      image: '/assets/images/jazz.png', 
+      link: 'https://github.com/mahdertesf/Jazz-Music-Generation' 
+    },
+    { 
+      title: 'Neural Machine Translation', 
+      description: 'Created an attention-based model for converting human-readable dates to machine-readable formats.', 
+      image: '/assets/images/translate.png', 
+      link: 'https://github.com/mahdertesf/Neural-Machine-Translation' 
+    },
   ];
 
   // --- RENDER ---
@@ -111,7 +139,6 @@ const Projects = () => {
                 <p className="text-slate-300 text-base leading-relaxed flex-grow">{project.description}</p>
                 {project.link && (
                   <div className="flex items-center gap-4 mt-6">
-                    {/* THIS IS THE CHANGED BUTTON */}
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm font-medium transition-colors">
                       <FaGithub /> View on GitHub
                     </a>
