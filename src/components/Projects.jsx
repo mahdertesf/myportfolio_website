@@ -17,7 +17,7 @@ const Projects = () => {
     {
       title: "Telegram Channel Hate Content Analyzer",
       description: "A web app to analyze hate content in Telegram channels using custom Transformer Encoders.",
-      github_link: "https://github.com/mahdertesf/Mahder-AI",
+      github_link: "https://github.com/mahdertesf/Transformer-Classifier",
       youtube_link: "https://youtu.be/VUNmOHDsebY"
     },
     {
