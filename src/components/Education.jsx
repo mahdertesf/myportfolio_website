@@ -35,16 +35,7 @@ const Education = () => {
                         <h3 className="text-2xl font-bold text-white mb-1">Addis Ababa University</h3>
                         <p className="text-lg text-slate-400 mb-4">Addis Ababa Institute of Technology (AAiT)</p>
                         
-                        <div className="space-y-3 mt-4">
-                            <p className="flex items-center justify-center md:justify-start gap-3 text-slate-200">
-                                <FaGraduationCap className="text-cyan-400 text-xl" />
-                                <span>B.Sc. in Electrical and Computer Engineering</span>
-                            </p>
-                            <p className="flex items-center justify-center md:justify-start gap-3 text-slate-200">
-                                <FaCalendarAlt className="text-cyan-400 text-xl" />
-                                <span>Expected Graduation: June 2026</span>
-                            </p>
-                        </div>
+                       
                     </div>
 
                 </div>
