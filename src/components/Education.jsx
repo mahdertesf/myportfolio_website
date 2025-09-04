@@ -31,12 +31,15 @@ const Education = () => {
                     */}
 
                     {/* Details Column */}
-                    <div className="flex-1 text-center md:text-left">
-                        <h3 className="text-2xl font-bold text-white mb-1">Addis Ababa University</h3>
-                        <p className="text-lg text-slate-400 mb-4">College of Technology and Built Environment (the former AAiT).</p>
-                        
-                       
-                    </div>
+                <div className="flex-1 text-center">
+  <h3 className="text-2xl font-bold text-white mb-1">
+    Addis Ababa University
+  </h3>
+  <p className="text-lg text-slate-400 mb-4">
+    College of Technology and Built Environment (The former AAiT)
+  </p>
+</div>
+
 
                 </div>
             </div>
