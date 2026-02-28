@@ -30,7 +30,7 @@ const Hero = () => {
           >
             <div>
               <p className="text-emerald-400 font-medium text-sm uppercase tracking-widest mb-4">
-                AI and backend engineer
+                Senior Data Scientist
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-50 tracking-tight leading-[1.1]">
                 Mahder Tesfaye
@@ -40,10 +40,12 @@ const Hero = () => {
             </div>
 
             <p className="text-zinc-400 leading-relaxed max-w-2xl text-base sm:text-lg mx-auto lg:mx-0">
-              Results-driven engineer with 5+ years deploying production-grade AI systems
-              and scalable backend architectures. I build autonomous AI agents, RAG pipelines,
-              and LLM-powered workflows on robust Python backends, delivering measurable
-              impact like 40% fewer support tickets, 30% less fraud, and 40% lower API latency at scale.
+              Results-driven Senior Data Scientist with 5+ years of experience combining
+              advanced statistical modeling with end-to-end machine learning deployment.
+              Proven expertise in architecting data-driven AI solutions, including RAG pipelines
+              and complex Agentic workflows. Track record of transforming complex datasets into
+              scalable systems that have reduced support tickets by 40%, cut financial fraud by
+              30%, and automated complex e-commerce and operational workflows utilizing modern LLMs.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">

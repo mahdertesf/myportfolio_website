@@ -3,63 +3,56 @@ import { motion, useInView } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'Programming & Core',
+    title: 'Languages & Core',
     items: [
-      'Python', 'JavaScript', 'TypeScript', 'SQL', 'Linux/Shell',
-      'Git/GitHub', 'Docker', 'Kubernetes', 'CI/CD', 'REST APIs', 'GraphQL',
+      'Python', 'SQL', 'R', 'JavaScript', 'TypeScript',
+      'Linux/Shell', 'Git', 'Docker', 'Kubernetes', 'REST APIs',
+    ],
+  },
+  {
+    title: 'Data Science & Statistics',
+    items: [
+      'Hypothesis Testing', 'A/B Testing', 'Experimental Design',
+      'Bayesian Inference', 'Causal Inference', 'Time Series Analysis',
+      'Statistical Modeling', 'Predictive Analytics',
     ],
   },
   {
     title: 'AI & Machine Learning',
     items: [
-      'NLP', 'Computer Vision', 'Generative AI (GANs, Diffusion)',
-      'Reinforcement Learning', 'Recommendation Systems', 'Graph ML (GNNs)',
+      'NLP', 'Computer Vision', 'Generative AI',
+      'Reinforcement Learning', 'Recommender Systems', 'Graph ML (GNNs)',
     ],
   },
   {
-    title: 'Frameworks & Tools',
+    title: 'LLMs & Agentic AI',
     items: [
-      'PyTorch', 'TensorFlow', 'Keras', 'Scikit-learn',
-      'Hugging Face', 'OpenCV', 'LangChain', 'LlamaIndex',
-      'Pinecone', 'Weaviate', 'FAISS', 'Milvus',
+      'Gemini API', 'OpenAI API', 'LLaMA', 'RAG',
+      'LoRA / PEFT', 'Prompt Engineering',
+      'LangChain', 'LangGraph', 'CrewAI',
     ],
   },
   {
-    title: 'Deep Learning',
+    title: 'Libraries & Frameworks',
     items: [
-      'CNNs', 'RNNs', 'LSTMs', 'Transformers', 'Transfer Learning',
-      'Self-Supervised Learning', 'Quantization', 'Pruning', 'Distillation',
+      'PyTorch', 'TensorFlow', 'Scikit-learn', 'XGBoost',
+      'LightGBM', 'CatBoost', 'Statsmodels', 'Hugging Face',
+      'OpenCV', 'LlamaIndex', 'Pinecone', 'Weaviate',
     ],
   },
   {
-    title: 'Large Language Models',
+    title: 'Visualization & BI',
     items: [
-      'BERT', 'GPT', 'LLaMA', 'Gemma', 'RAG',
-      'LoRA / PEFT / QLoRA', 'Prompt Engineering',
-      'Agents (AutoGPT, CrewAI)',
+      'Tableau', 'Power BI', 'Plotly', 'Seaborn',
+      'Matplotlib', 'Streamlit', 'Dash',
     ],
   },
   {
-    title: 'MLOps & Data',
+    title: 'Data Engineering & MLOps',
     items: [
-      'AWS SageMaker', 'GCP Vertex AI', 'Azure ML', 'Databricks',
-      'MLflow', 'W&B', 'TorchServe', 'Triton',
-      'Pandas', 'NumPy', 'Polars', 'Spark', 'Airflow', 'Kafka',
-    ],
-  },
-  {
-    title: 'Full-Stack',
-    items: [
-      'Django', 'FastAPI', 'Flask', 'Node.js', 'Express', 'NestJS',
-      'React', 'Next.js', 'PostgreSQL', 'MongoDB', 'MySQL',
-      'Redis', 'RabbitMQ', 'OAuth2', 'JWT',
-    ],
-  },
-  {
-    title: 'DevOps & Infra',
-    items: [
-      'Terraform', 'Ansible', 'PyTest', 'Jest', 'Cypress',
-      'Jira', 'Confluence', 'Agile / Scrum',
+      'AWS SageMaker', 'GCP Vertex AI', 'Databricks',
+      'Spark', 'Kafka', 'Airflow', 'MLflow',
+      'PostgreSQL', 'MongoDB',
     ],
   },
 ];

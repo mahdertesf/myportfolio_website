@@ -39,7 +39,7 @@ const Education = () => {
           </div>
 
           <p className="text-zinc-200 font-medium text-lg mb-6">
-            Bachelor of Science in Electrical and Computer Engineering
+            BSc in Electrical and Computer Engineering
           </p>
 
           <div>

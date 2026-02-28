@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 
 const experiences = [
   {
-    title: 'Senior Generative AI Engineer and Backend Engineer',
+    title: 'Senior Generative AI Engineer',
     company: 'ChipChip',
     location: null,
-    period: 'Oct 2025 - Present',
+    period: 'Sep 2025 - Feb 2026',
     bullets: [
       'Engineered a robust, multilingual e-commerce chatbot utilizing LangChain, LangGraph, and the Gemini API, enabling users to search for goods, compare prices across different marketplaces, and place orders.',
       'Implemented conversational capabilities supporting both voice and text inputs in multiple languages, including Amharic, English, and Afaan Oromo.',
@@ -15,32 +15,42 @@ const experiences = [
     ],
   },
   {
-    title: 'AI Full-Stack Engineer',
+    title: 'Senior Data Scientist',
     company: 'IE Networks',
-    location: 'Addis Ababa, Ethiopia',
+    location: null,
     period: 'Mar 2022 - Jun 2025',
     bullets: [
-      'Architected and deployed three mission-critical AI systems at Ethiopia\'s leading payment gateway, directly enhancing security, customer support, and merchant success.',
-      'AI Support Chatbot: Engineered a full-stack RAG pipeline using LangChain, Pinecone, and the OpenAI API, reducing customer support tickets by 40%.',
-      'Fraud Detection Engine: Built and deployed a real-time TensorFlow and Scikit-learn model that analyzed transaction patterns, cutting chargebacks by 30%.',
-      'Analytics Dashboard: Developed a full-stack analytics tool with a FastAPI backend and React/Next.js frontend, contributing to a 15% increase in B2B client acquisition.',
+      'Led the design and execution of three high-impact machine learning initiatives for a leading payment gateway, optimizing transaction security and enhancing customer experience metrics.',
+      'NLP & Generative AI: Developed advanced NLP models and RAG pipelines using LangChain and OpenAI to automate customer inquiries, analyzing text data to reduce support ticket volume by 40%.',
+      'Predictive Fraud Modeling: Designed and trained real-time classification models using TensorFlow and Scikit-learn to detect anomalous transaction patterns, successfully reducing financial chargebacks by 30%.',
+      'Business Intelligence: Engineered data visualization pipelines and dashboards to interpret complex B2B datasets, deriving actionable insights that contributed to a 15% increase in client acquisition.',
     ],
   },
   {
-    title: 'Remote ML Consultant',
+    title: 'AI Researcher',
+    company: "Kenya's Inaugural AI Institute to Advance Innovation",
+    location: null,
+    period: 'Jan 2023 - Jan 2025',
+    bullets: [
+      'Spearheaded research initiatives focused on developing and deploying foundational AI technologies tailored specifically for the African continent.',
+      'Collaborated with cross-functional teams to build localized machine learning models aimed at driving regional innovation and solving unique socio-economic challenges.',
+    ],
+  },
+  {
+    title: 'Remote Machine Learning Consultant (Contract)',
     company: 'Oasis Outsourcing',
-    location: 'Contract',
+    location: null,
     period: 'Mar 2023 - Sep 2023',
     bullets: [
       'Developed and deployed a sophisticated financial forecasting system by integrating NLP for sentiment analysis with a Time-Series model for market prediction.',
       'Achieved a 20% improvement in predictive accuracy over existing client benchmarks.',
-      'Engineered an automated data and model execution pipeline using n8n, eliminating the manual data gathering work equivalent to three full-time junior analysts.',
+      'Engineered an automated data and model execution pipeline using n8n, eliminating manual data gathering work equivalent to three full-time junior analysts.',
     ],
   },
   {
-    title: 'Remote Computer Vision Engineer',
+    title: 'Remote Computer Vision Engineer (Contract)',
     company: 'Arcy',
-    location: 'Contract',
+    location: null,
     period: 'Jun 2022 - Dec 2022',
     bullets: [
       'Designed and deployed a high-accuracy machine vision system for warehouse automation.',
@@ -51,10 +61,10 @@ const experiences = [
   {
     title: 'Backend Python Developer',
     company: 'Addis Pay Financial Technology',
-    location: 'Addis Ababa, Ethiopia',
+    location: null,
     period: 'Oct 2020 - Jan 2022',
     bullets: [
-      'Key contributor in migrating a monolithic architecture to a microservices-based system in a high-traffic FinTech environment.',
+      'Served as a key contributor in migrating a monolithic architecture to a microservices-based system in a high-traffic FinTech environment.',
       'Developed and deployed robust backend services using Django, Flask, and FastAPI.',
       'The migration resulted in a 40% reduction in API latency and enabled 60% faster feature delivery.',
       'Established CI/CD pipelines using Git for streamlined deployments.',
@@ -62,14 +72,12 @@ const experiences = [
   },
   {
     title: 'Data Science Intern',
-    company: 'Ethiopian Artificial Intelligence Institute (EIAI)',
-    location: 'Addis Ababa, Ethiopia',
+    company: 'The ACTS AI Institute (ACAII)',
+    location: null,
     period: 'Feb 2020 - Aug 2020',
     bullets: [
       'Provided foundational data support for national-level AI initiatives, accelerating project timelines for senior researchers.',
-      'Extracted and cleaned large-scale datasets using SQL, Pandas, and NumPy.',
-      'Developed interactive dashboards with Matplotlib and Seaborn for data visualization.',
-      'Assisted in building a proof-of-concept predictive model with Scikit-learn.',
+      'Extracted and cleaned large-scale datasets using SQL, Pandas, and NumPy; developed interactive dashboards with Matplotlib and Seaborn for data visualization.',
     ],
   },
 ];

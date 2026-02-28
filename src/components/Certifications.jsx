@@ -4,9 +4,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 const certifications = [
   { name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI & Stanford University' },
   { name: 'Deep Learning Specialization', issuer: 'DeepLearning.AI' },
-  { name: 'TensorFlow Specialization', issuer: 'DeepLearning.AI' },
+  { name: 'TensorFlow Specialization & TensorFlow Advanced Techniques', issuer: 'DeepLearning.AI' },
   { name: 'Natural Language Processing Specialization', issuer: 'DeepLearning.AI' },
-  { name: 'TensorFlow Advanced Techniques', issuer: 'DeepLearning.AI' },
   { name: 'Meta Full-Stack Developer Professional Certificate', issuer: 'Meta on Coursera' },
 ];
 
