@@ -23,7 +23,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Open to new opportunities. Feel free to reach out — I'd love to hear from you.
+            Open to new opportunities. Feel free to reach out. I'd love to hear from you.
           </motion.p>
 
           <motion.div

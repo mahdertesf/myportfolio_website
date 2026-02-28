@@ -42,7 +42,7 @@ const Hero = () => {
             <p className="text-zinc-400 leading-relaxed max-w-2xl text-base sm:text-lg mx-auto lg:mx-0">
               Results-driven engineer with 5+ years deploying production-grade AI systems
               and scalable backend architectures. I build autonomous AI agents, RAG pipelines,
-              and LLM-powered workflows on robust Python backends — delivering measurable
+              and LLM-powered workflows on robust Python backends, delivering measurable
               impact like 40% fewer support tickets, 30% less fraud, and 40% lower API latency at scale.
             </p>
 

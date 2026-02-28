@@ -6,7 +6,7 @@ const experiences = [
     title: 'Senior Generative AI Engineer and Backend Engineer',
     company: 'ChipChip',
     location: null,
-    period: 'Oct 2025 — Present',
+    period: 'Oct 2025 - Present',
     bullets: [
       'Engineered a robust, multilingual e-commerce chatbot utilizing LangChain, LangGraph, and the Gemini API, enabling users to search for goods, compare prices across different marketplaces, and place orders.',
       'Implemented conversational capabilities supporting both voice and text inputs in multiple languages, including Amharic, English, and Afaan Oromo.',
@@ -18,7 +18,7 @@ const experiences = [
     title: 'AI Full-Stack Engineer',
     company: 'IE Networks',
     location: 'Addis Ababa, Ethiopia',
-    period: 'Mar 2022 — Jun 2025',
+    period: 'Mar 2022 - Jun 2025',
     bullets: [
       'Architected and deployed three mission-critical AI systems at Ethiopia\'s leading payment gateway, directly enhancing security, customer support, and merchant success.',
       'AI Support Chatbot: Engineered a full-stack RAG pipeline using LangChain, Pinecone, and the OpenAI API, reducing customer support tickets by 40%.',
@@ -30,7 +30,7 @@ const experiences = [
     title: 'Remote ML Consultant',
     company: 'Oasis Outsourcing',
     location: 'Contract',
-    period: 'Mar 2023 — Sep 2023',
+    period: 'Mar 2023 - Sep 2023',
     bullets: [
       'Developed and deployed a sophisticated financial forecasting system by integrating NLP for sentiment analysis with a Time-Series model for market prediction.',
       'Achieved a 20% improvement in predictive accuracy over existing client benchmarks.',
@@ -41,7 +41,7 @@ const experiences = [
     title: 'Remote Computer Vision Engineer',
     company: 'Arcy',
     location: 'Contract',
-    period: 'Jun 2022 — Dec 2022',
+    period: 'Jun 2022 - Dec 2022',
     bullets: [
       'Designed and deployed a high-accuracy machine vision system for warehouse automation.',
       'Fine-tuned YOLO (PyTorch) and TensorFlow models, achieving 99.5% accuracy in object detection and classification.',
@@ -52,7 +52,7 @@ const experiences = [
     title: 'Backend Python Developer',
     company: 'Addis Pay Financial Technology',
     location: 'Addis Ababa, Ethiopia',
-    period: 'Oct 2020 — Jan 2022',
+    period: 'Oct 2020 - Jan 2022',
     bullets: [
       'Key contributor in migrating a monolithic architecture to a microservices-based system in a high-traffic FinTech environment.',
       'Developed and deployed robust backend services using Django, Flask, and FastAPI.',
@@ -64,7 +64,7 @@ const experiences = [
     title: 'Data Science Intern',
     company: 'Ethiopian Artificial Intelligence Institute (EIAI)',
     location: 'Addis Ababa, Ethiopia',
-    period: 'Feb 2020 — Aug 2020',
+    period: 'Feb 2020 - Aug 2020',
     bullets: [
       'Provided foundational data support for national-level AI initiatives, accelerating project timelines for senior researchers.',
       'Extracted and cleaned large-scale datasets using SQL, Pandas, and NumPy.',
