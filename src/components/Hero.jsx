@@ -1,76 +1,63 @@
-import React from 'react';
-import SectionWrapper from './SectionWrapper';
-import { FaMouse } from 'react-icons/fa';
-import { TypeAnimation } from 'react-type-animation';
+import { motion } from 'framer-motion';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <SectionWrapper id="home">
-      {/* Full-screen container with responsive padding */}
-      <div className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8">
-        
-        {/* Background Radial Gradient */}
-        <div className="absolute inset-0 z-0 bg-radial-gradient"></div>
+    <section id="hero" className="min-h-screen flex items-center pt-16">
+      <div className="max-w-6xl mx-auto px-6 py-16 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-        {/* Content Container */}
-        <div className="relative z-10 flex flex-col items-center">
-          
-          {/* Profile Picture */}
-          <div className="mb-6 animate-fadeIn" style={{ animationDelay: '100ms', opacity: 0 }}>
-            <div className="rounded-full border-4 border-glow/50 p-1 relative w-48 h-48 md:w-56 md:h-56 shadow-2xl shadow-glow/20">
+          <motion.div
+            className="flex-shrink-0 lg:order-last"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden ring-4 ring-zinc-800 shadow-2xl shadow-emerald-500/5">
               <img
                 src="/assets/images/profile.png"
-                alt="Mahder Tesfaye"
-                className="object-cover object-center w-full h-full rounded-full"
+                alt="Mahder Tesfaye Abebe"
+                className="w-full h-full object-cover"
               />
             </div>
-          </div>
-          
-          {/* Name with refined responsive text sizes */}
-          <h1 
-            className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl animate-fadeIn bg-gradient-to-r from-glow to-primary bg-clip-text text-transparent"
-            style={{ animationDelay: '300ms', opacity: 0 }}
+          </motion.div>
+
+          <motion.div
+            className="flex-1 text-center lg:text-left space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Mahder Tesfaye Abebe
-          </h1>
-          
-          {/* Title with responsive margin and max-width for readability */}
-          <p 
-            className="mt-4 md:mt-5 text-lg md:text-xl text-light max-w-prose animate-fadeIn"
-            style={{ animationDelay: '500ms', opacity: 0 }}
-          >
-            Machine Learning Engineer | Full-Stack Web Developer
-          </p>
+            <div>
+              <p className="text-emerald-400 font-medium text-sm uppercase tracking-widest mb-4">
+                AI and backend engineer
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-50 tracking-tight leading-[1.1]">
+                Mahder Tesfaye
+                <br />
+                <span className="text-zinc-400">Abebe</span>
+              </h1>
+            </div>
 
-          {/* Inspirational Quote with a robust, responsive container */}
-          <div className="mt-6 md:mt-8 min-h-[80px] flex items-center justify-center">
-            <TypeAnimation
-              sequence={[
-                1200, 
-                '"Every challenge is an invitation to grow!"',
-              ]}
-              wrapper="p"
-              cursor={true}
-              speed={50}
-              className="text-xl md:text-2xl font-semibold max-w-prose bg-gradient-to-r from-red-500 to-primary bg-clip-text text-transparent"
-            />
-          </div>
+            <p className="text-zinc-400 leading-relaxed max-w-2xl text-base sm:text-lg mx-auto lg:mx-0">
+              Results-driven engineer with 5+ years building production-grade AI agent systems
+              and scalable backend architectures. I specialize in autonomous AI agents,
+              RAG pipelines, and LLM-powered workflows — backed by robust Python backends
+              that serve real users at scale.
+            </p>
 
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+              <a
+                href="mailto:mahdertesfaye11@gmail.com"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-zinc-950 bg-emerald-500 rounded-lg hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20"
+              >
+                <FaEnvelope /> Get in Touch
+              </a>
+            </div>
+          </motion.div>
         </div>
-
-
-        <div 
-      
-          className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-2 text-light/70 animate-fadeIn"
-          style={{ animationDelay: '900ms', opacity: 0 }}
-        >
-          <FaMouse className="text-2xl" />
-          <span className="text-xs tracking-widest">SCROLL</span>
-          <div className="w-px h-6 bg-light/50 mt-1 animate-bounce"></div>
-        </div>
-
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

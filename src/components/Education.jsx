@@ -1,50 +1,66 @@
-import React from 'react';
-import SectionWrapper from './SectionWrapper';
-import { FaGraduationCap, FaCalendarAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaGraduationCap } from 'react-icons/fa';
 
-// Optional: Add your university logo to your assets folder and import it
-// import aauLogo from '../assets/images/aau-logo.png'; // Example path
+const coursework = [
+  'Machine Learning', 'Data Mining', 'Data Structures & Algorithms',
+  'Natural Language Processing', 'Computer Vision', 'Image Processing',
+  'Information Retrieval', 'Database Systems', 'Software Development',
+];
 
 const Education = () => {
-    return (
-        <SectionWrapper id="education">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center animate-fadeIn">Education</h2>
-            
-            <div className="flex justify-center animate-fadeIn">
-                {/* Main education card with hover effects */}
-                <div className="
-                    bg-slate-800/50 p-8 rounded-lg border border-slate-700 
-                    shadow-xl w-full max-w-4xl 
-                    flex flex-col md:flex-row items-center gap-8 
-                    hover:border-cyan-400 hover:scale-[1.02] transition-all duration-300 ease-in-out
-                ">
-                    
-                    {/* Optional Logo Column - Uncomment and provide the image path */}
-                    {/* 
-                    <div className="flex-shrink-0">
-                        <img 
-                            src={aauLogo} 
-                            alt="Addis Ababa University Logo" 
-                            className="h-24 w-24 rounded-full object-cover bg-white p-2"
-                        />
-                    </div>
-                    */}
+  return (
+    <section id="education" className="py-20 md:py-28 border-t border-zinc-800/50">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-zinc-50 tracking-tight mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Education
+        </motion.h2>
 
-                    {/* Details Column */}
-                <div className="flex-1 text-center">
-  <h3 className="text-2xl font-bold text-white mb-1">
-    Addis Ababa University
-  </h3>
-  <p className="text-lg text-slate-400 mb-4">
-    College of Technology and Built Environment (The former AAiT)
-  </p>
-</div>
-
-
-                </div>
+        <motion.div
+          className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 sm:p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <div className="flex items-start gap-4 mb-6">
+            <div className="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+              <FaGraduationCap className="text-emerald-400 text-xl" />
             </div>
-        </SectionWrapper>
-    );
+            <div>
+              <h3 className="text-xl font-semibold text-zinc-50">Addis Ababa University</h3>
+              <p className="text-zinc-500 text-sm">Addis Ababa, Ethiopia</p>
+            </div>
+          </div>
+
+          <p className="text-zinc-200 font-medium text-lg mb-6">
+            Bachelor of Science in Electrical and Computer Engineering
+          </p>
+
+          <div>
+            <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-3">
+              Relevant Coursework
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {coursework.map((course, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1.5 text-sm text-zinc-400 bg-zinc-800/80 rounded-md border border-zinc-700/50"
+                >
+                  {course}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default Education;

@@ -1,177 +1,140 @@
-import React from 'react';
-import SectionWrapper from './SectionWrapper';
-import ReactPlayer from 'react-player/youtube';
-import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
-// --- COMPONENT START ---
-const Projects = () => {
+const experiences = [
+  {
+    title: 'Senior Generative AI Engineer and Backend Engineer',
+    company: 'ChipChip',
+    location: null,
+    period: 'Oct 2025 — Present',
+    bullets: [
+      'Engineered a robust, multilingual e-commerce chatbot utilizing LangChain, LangGraph, and the Gemini API, enabling users to search for goods, compare prices across different marketplaces, and place orders.',
+      'Implemented conversational capabilities supporting both voice and text inputs in multiple languages, including Amharic, English, and Afaan Oromo.',
+      'Developed an AI-powered agent using LangGraph to fully automate product ordering, product catalog additions, and mobile app UI interactions, replacing manual workflows.',
+      'Automated complex desktop workflows leveraging the Gemini API, streamlining internal operations and driving significant operational efficiency.',
+    ],
+  },
+  {
+    title: 'AI Full-Stack Engineer',
+    company: 'IE Networks',
+    location: 'Addis Ababa, Ethiopia',
+    period: 'Mar 2022 — Jun 2025',
+    bullets: [
+      'Architected and deployed three mission-critical AI systems at Ethiopia\'s leading payment gateway, directly enhancing security, customer support, and merchant success.',
+      'AI Support Chatbot: Engineered a full-stack RAG pipeline using LangChain, Pinecone, and the OpenAI API, reducing customer support tickets by 40%.',
+      'Fraud Detection Engine: Built and deployed a real-time TensorFlow and Scikit-learn model that analyzed transaction patterns, cutting chargebacks by 30%.',
+      'Analytics Dashboard: Developed a full-stack analytics tool with a FastAPI backend and React/Next.js frontend, contributing to a 15% increase in B2B client acquisition.',
+    ],
+  },
+  {
+    title: 'Remote ML Consultant',
+    company: 'Oasis Outsourcing',
+    location: 'Contract',
+    period: 'Mar 2023 — Sep 2023',
+    bullets: [
+      'Developed and deployed a sophisticated financial forecasting system by integrating NLP for sentiment analysis with a Time-Series model for market prediction.',
+      'Achieved a 20% improvement in predictive accuracy over existing client benchmarks.',
+      'Engineered an automated data and model execution pipeline using n8n, eliminating the manual data gathering work equivalent to three full-time junior analysts.',
+    ],
+  },
+  {
+    title: 'Remote Computer Vision Engineer',
+    company: 'Arcy',
+    location: 'Contract',
+    period: 'Jun 2022 — Dec 2022',
+    bullets: [
+      'Designed and deployed a high-accuracy machine vision system for warehouse automation.',
+      'Fine-tuned YOLO (PyTorch) and TensorFlow models, achieving 99.5% accuracy in object detection and classification.',
+      'Deployed the system as a containerized microservice on a GPU instance using Docker, reducing manual inventory labor by 80%.',
+    ],
+  },
+  {
+    title: 'Backend Python Developer',
+    company: 'Addis Pay Financial Technology',
+    location: 'Addis Ababa, Ethiopia',
+    period: 'Oct 2020 — Jan 2022',
+    bullets: [
+      'Key contributor in migrating a monolithic architecture to a microservices-based system in a high-traffic FinTech environment.',
+      'Developed and deployed robust backend services using Django, Flask, and FastAPI.',
+      'The migration resulted in a 40% reduction in API latency and enabled 60% faster feature delivery.',
+      'Established CI/CD pipelines using Git for streamlined deployments.',
+    ],
+  },
+  {
+    title: 'Data Science Intern',
+    company: 'Ethiopian Artificial Intelligence Institute (EIAI)',
+    location: 'Addis Ababa, Ethiopia',
+    period: 'Feb 2020 — Aug 2020',
+    bullets: [
+      'Provided foundational data support for national-level AI initiatives, accelerating project timelines for senior researchers.',
+      'Extracted and cleaned large-scale datasets using SQL, Pandas, and NumPy.',
+      'Developed interactive dashboards with Matplotlib and Seaborn for data visualization.',
+      'Assisted in building a proof-of-concept predictive model with Scikit-learn.',
+    ],
+  },
+];
 
-  // --- DATA ---
-  const Special_Projects = [
-    {
-      title: 'Fine-Tune Gemma2 models',
-      description: 'A web app with a simple UI to fine-tune Gemma2 models for different NLP tasks.',
-      github_link: "https://github.com/mahdertesf/Mahder-AI",
-      youtube_link: "https://youtu.be/PIFOzK_SzVI"
-    },
-    {
-      title: "Telegram Channel Hate Content Analyzer",
-      description: "A web app to analyze hate content in Telegram channels using custom Transformer Encoders.",
-      github_link: "https://github.com/mahdertesf/Transformer-Classifier",
-      youtube_link: "https://youtu.be/VUNmOHDsebY"
-    },
-    {
-      title: 'College Management System | Full-Stack App',
-      description: 'A full-stack web app for my university to streamline academic management, featuring role-based access and AI-powered study tools via the Gemini API.',
-      github_link: 'https://github.com/mahdertesf/fullstackproject6',
-      youtube_link: 'https://youtu.be/Xv6TKKgXb9k'
-    },
-    {
-      title: 'Full-Stack Cryptography Toolkit',
-      description: 'An interactive web app demonstrating modern encryption. Features a React frontend and a Django REST API to handle algorithms like AES, RSA, and 3DES.',
-      github_link: "https://github.com/mahdertesf/Cryptography-Playground",
-      image: '/assets/images/special_project/crypto.png', // This will be displayed
-    }
-  ];
+function ExperienceCard({ exp, index }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
-  const web_projects = [
-    {
-      title: 'Landing Page for a Virtual Reality Platform',
-      description: 'A modern and engaging landing page for a Virtual Reality platform designed to attract and convert users.',
-      image: '/assets/images/virtual.png',
-      link: 'https://github.com/mahdertesf/VirtualR'
-    },
-    {
-      title: 'School Website',
-      description: 'A 6-page responsive website for "Verzantlias School for Future," built with React and TailwindCSS.',
-      image: '/assets/images/school.png',
-      link: 'https://github.com/mahdertesf/Verzantlias-School-for-Future-Website'
-    },
-    {
-      title: 'Hotel Management System Dashboard',
-      description: "As a project manager and frontend lead, I architected the user authentication system and developed the main dashboard. My role also involved managing the team's Git workflow, including reviewing and merging all frontend pull requests.",
-      image: '/assets/images/hotel-dashboard.png',
-      link: 'https://github.com/Hotel-Translyvania/Hotel-Management-System' 
-    }
-  ];
-
-  const course_projects = [
-    { title: 'Image Segmentation (U-Net)', description: 'Implemented the U-Net architecture from scratch using TensorFlow for semantic image segmentation on the CARLA autonomous driving dataset.', image: '/assets/images/unet.png', link: 'https://github.com/mahdertesf/image-Segmentation-with-UNet' },
-    { title: 'Face Recognition System (FaceNet)', description: 'Built a recognition system using a pre-trained FaceNet model and triplet loss for high-accuracy face verification.', image: '/assets/images/face.png', link: 'https://github.com/mahdertesf/Face-Recognition-System' },
-    { title: 'Sign Language Recognition', description: 'Developed a TensorFlow multi-class classifier for sign language, achieving over 95% validation accuracy.', image: '/assets/images/sign.png', link: 'https://github.com/mahdertesf/Sign-Language-Recognition' },
-    { title: 'Transfer Learning (InceptionV3)', description: 'Fine-tuned a pre-trained InceptionV3 model for human vs. horse classification, achieving 98.6% validation accuracy.', image: '/assets/images/transfer.png', link: 'https://github.com/mahdertesf/Transfer-Learning-InceptionV3-' },
-    { title: 'Jazz Music Generation', description: 'Built an LSTM-based system for generating novel jazz melodies, demonstrating creativity in AI.', image: '/assets/images/jazz.png', link: 'https://github.com/mahdertesf/Jazz-Music-Generation' },
-    { title: 'Neural Machine Translation', description: 'Created an attention-based model for converting human-readable dates to machine-readable formats.', image: '/assets/images/translate.png', link: 'https://github.com/mahdertesf/Neural-Machine-Translation' },
-  ];
-
-  // --- RENDER ---
   return (
-    <SectionWrapper id="projects">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center animate-fadeIn">Projects Showcase</h2>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative pl-8 border-l-2 border-zinc-800 hover:border-emerald-500/50 transition-colors duration-300 group"
+    >
+      <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-zinc-950 border-2 border-zinc-700 group-hover:border-emerald-500 transition-colors duration-300" />
 
-      {/* --- Section 1: Featured Projects --- */}
-      <div className='mb-20'>
-        <h3 className="text-2xl sm:text-3xl font-semibold text-glow mb-8 text-center">Featured Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {Special_Projects.map((project, index) => (
-            <div key={index} className="bg-slate-800/50 rounded-lg border border-slate-700 shadow-xl overflow-hidden flex flex-col group">
-              <div className="w-full aspect-video bg-black overflow-hidden">
-                {project.youtube_link ? (
-                  <ReactPlayer
-                    url={project.youtube_link}
-                    width="100%" height="100%"
-                    playing={true} muted={true} loop={true} controls={false}
-                    className="group-hover:scale-105 transition-transform duration-300"
-                  />
-                ) : (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                )}
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
-                <p className="text-slate-300 text-base leading-relaxed flex-grow">{project.description}</p>
-                <div className="flex items-center gap-4 mt-6">
-                  <a href={project.github_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm font-medium transition-colors">
-                    <FaGithub /> GitHub
-                  </a>
-                  {project.youtube_link && (
-                    <a href={project.youtube_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-red-700/80 hover:bg-red-600/80 rounded-md text-sm font-medium transition-colors">
-                      <FaYoutube /> YouTube
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+      <div className="pb-10">
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-50">{exp.title}</h3>
+            <p className="text-emerald-400 font-medium">{exp.company}</p>
+          </div>
+          <div className="text-sm text-zinc-500 flex-shrink-0 sm:text-right">
+            <span>{exp.period}</span>
+            {exp.location && <span className="block">{exp.location}</span>}
+          </div>
+        </div>
+
+        <ul className="space-y-2 mt-3">
+          {exp.bullets.map((bullet, i) => (
+            <li key={i} className="text-zinc-400 leading-relaxed flex gap-3 text-[15px]">
+              <span className="mt-[9px] w-1 h-1 bg-zinc-600 rounded-full flex-shrink-0" />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+}
+
+const Experience = () => {
+  return (
+    <section id="experience" className="py-20 md:py-28 border-t border-zinc-800/50">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-zinc-50 tracking-tight mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Work Experience
+        </motion.h2>
+
+        <div>
+          {experiences.map((exp, i) => (
+            <ExperienceCard key={i} exp={exp} index={i} />
           ))}
         </div>
       </div>
-
-      {/* --- Section 2: Web Applications & Design --- */}
-      <div className='mb-20'>
-        <h3 className="text-2xl sm:text-3xl font-semibold text-glow mb-8 text-center">Web Applications & Design</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {web_projects.map((project, index) => (
-            <div key={index} className="bg-slate-800/50 rounded-lg border border-slate-700 shadow-xl overflow-hidden flex flex-col group">
-              <div className="w-full aspect-video bg-black overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
-                <p className="text-slate-300 text-base leading-relaxed flex-grow">{project.description}</p>
-                {project.link && (
-                  <div className="flex items-center gap-4 mt-6">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm font-medium transition-colors">
-                      <FaGithub /> View on GitHub
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* --- Section 3: Machine Learning Case Studies --- */}
-      <div className='mb-12'>
-        <div className='text-center mb-8'>
-          <h3 className="text-2xl sm:text-3xl font-semibold text-glow mb-4">Machine Learning Case Studies</h3>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            A few among the hundreds of projects I did through advanced specializations on <a href='https://www.deeplearning.ai/' target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">DeepLearning.AI</a>, covering core concepts in NLP, Computer Vision, and sequence models.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {course_projects.map((project, index) => (
-            <div key={index} className="bg-slate-800/50 rounded-lg border border-slate-700 shadow-xl overflow-hidden flex flex-col group">
-              <div className="w-full aspect-video bg-black overflow-hidden">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                  <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
-                  <p className="text-slate-300 text-sm leading-relaxed flex-grow">{project.description}</p>
-                  <div className="flex items-center gap-4 mt-6">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm font-medium transition-colors">
-                          <FaGithub /> View on GitHub
-                      </a>
-                  </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* --- Final "See More" Button --- */}
-      <div className="text-center mt-16">
-        <a href='https://github.com/mahdertesf' target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-cyan-600 hover:bg-cyan-500 rounded-lg text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105">
-          <FaGithub /> See More on My GitHub Profile
-        </a>
-      </div>
-
-    </SectionWrapper>
+    </section>
   );
 };
 
-export default Projects;
+export default Experience;

@@ -1,98 +1,77 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import SectionWrapper from "./SectionWrapper";
+import { motion } from 'framer-motion';
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <>
-      <SectionWrapper id="contact">
-        <div className="flex flex-col items-center justify-center animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
-            Contact Me
-          </h2>
+      <section id="contact" className="py-20 md:py-28 border-t border-zinc-800/50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold text-zinc-50 tracking-tight mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Get in Touch
+          </motion.h2>
 
-          {/* Main Contact Card */}
-          <div className="
-            bg-gradient-to-br from-gray-900 to-slate-900 
-            rounded-lg border border-slate-700 shadow-xl 
-            w-full max-w-4xl p-8 md:p-12 text-slate-300
-          ">
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-glow mb-4">Let's Connect</h3>
-              <p className="text-lg text-slate-400 mb-8">
-                I'm currently seeking new opportunities. Feel free to reach out via email, phone, or find me on the web.
-              </p>
-            </div>
-            
-            {/* Contact Details Grid */}
-            <div className="grid md:grid-cols-2 gap-8 mb-10">
-              {/* Email */}
-              <div className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                <FaEnvelope className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="text-white font-semibold">Email</h4>
-                  <a
-                    href="mailto:mahdertesfaye11@gmail.com"
-                    className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 break-all"
-                  >
-                    mahdertesfaye11@gmail.com
-                  </a>
-                </div>
-              </div>
+          <motion.p
+            className="text-zinc-400 text-lg mb-12 max-w-xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Open to new opportunities. Feel free to reach out — I'd love to hear from you.
+          </motion.p>
 
-              {/* Phone */}
-              <div className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                <FaPhoneAlt className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="text-white font-semibold">Phone</h4>
-                  <a
-                    href="tel:+251921957652"
-                    className="text-slate-300 hover:text-cyan-400 transition-colors duration-300"
-                  >
-                    +251921957652
-                  </a>
-                </div>
+          <motion.div
+            className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <a
+              href="mailto:mahdertesfaye11@gmail.com"
+              className="flex items-center gap-3 p-4 bg-zinc-900/60 rounded-lg border border-zinc-800 hover:border-emerald-500/30 transition-colors group"
+            >
+              <FaEnvelope className="text-emerald-400 text-lg flex-shrink-0" />
+              <div className="text-left">
+                <p className="text-xs text-zinc-500 uppercase tracking-wider">Email</p>
+                <p className="text-zinc-300 text-sm group-hover:text-zinc-100 transition-colors break-all">
+                  mahdertesfaye11@gmail.com
+                </p>
               </div>
-            </div>
+            </a>
 
-            {/* Social Links */}
-            <div className="text-center">
-              <h4 className="text-xl font-semibold text-white mb-6">Find me on the web</h4>
-              <div className="flex justify-center gap-8">
-                <a
-                  href="https://github.com/mahdertesf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  className="text-slate-400 hover:text-cyan-400 hover:scale-110 transition-all duration-300"
-                >
-                  <FaGithub size={40} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  className="text-slate-400 hover:text-cyan-400 hover:scale-110 transition-all duration-300"
-                >
-                  <FaLinkedin size={40} />
-                </a>
+            <a
+              href="tel:+251921957652"
+              className="flex items-center gap-3 p-4 bg-zinc-900/60 rounded-lg border border-zinc-800 hover:border-emerald-500/30 transition-colors group"
+            >
+              <FaPhoneAlt className="text-emerald-400 text-lg flex-shrink-0" />
+              <div className="text-left">
+                <p className="text-xs text-zinc-500 uppercase tracking-wider">Phone</p>
+                <p className="text-zinc-300 text-sm group-hover:text-zinc-100 transition-colors">
+                  +251 921 957 652
+                </p>
               </div>
-            </div>
+            </a>
+          </motion.div>
+
+        </div>
+      </section>
+
+      <footer className="border-t border-zinc-800/50 py-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-600">
+          <p>&copy; {new Date().getFullYear()} Mahder Tesfaye Abebe</p>
+          <div className="flex items-center gap-5">
+            <a href="mailto:mahdertesfaye11@gmail.com" className="hover:text-zinc-400 transition-colors">
+              <FaEnvelope size={16} />
+            </a>
           </div>
         </div>
-      </SectionWrapper>
-
-      {/* Enhanced Footer */}
-      <footer className="w-full bg-slate-900 border-t border-slate-800 py-6 mt-16 text-center text-slate-400">
-        <div className="flex justify-center gap-6 mb-4">
-            <a href="https://github.com/mahdertesf" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-white transition-colors"><FaGithub size={24}/></a>
-            <a href="https://www.linkedin.com/in/mahder-tesfaye-abebe-396095327/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedin size={24}/></a>
-            <a href="mailto:mahdertesfaye11@gmail.com" aria-label="Email" className="hover:text-white transition-colors"><FaEnvelope size={24}/></a>
-        </div>
-        <p>
-          © {new Date().getFullYear()} Mahder Tesfaye Abebe. All rights reserved.
-        </p>
       </footer>
     </>
   );
