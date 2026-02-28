@@ -40,10 +40,10 @@ const Hero = () => {
             </div>
 
             <p className="text-zinc-400 leading-relaxed max-w-2xl text-base sm:text-lg mx-auto lg:mx-0">
-              Results-driven engineer with 5+ years building production-grade AI agent systems
-              and scalable backend architectures. I specialize in autonomous AI agents,
-              RAG pipelines, and LLM-powered workflows — backed by robust Python backends
-              that serve real users at scale.
+              Results-driven engineer with 5+ years deploying production-grade AI systems
+              and scalable backend architectures. I build autonomous AI agents, RAG pipelines,
+              and LLM-powered workflows on robust Python backends — delivering measurable
+              impact like 40% fewer support tickets, 30% less fraud, and 40% lower API latency at scale.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
